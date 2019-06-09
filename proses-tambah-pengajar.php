@@ -1,23 +1,20 @@
 <?php
-
+// include database connection file
 include_once("koneksi.php");
 
-// cek apakah tombol daftar sudah diklik atau blum?
-if(isset($_POST['submit'])){
-    // ambil data dari formulir
+// Check If form submitted, insert form data into users table.
+if(isset($_POST['submit'])) {
     $nama = $_POST['nama'];
     $alamat = $_POST['alamat'];
     $nohp = $_POST['nohp'];
     $kelas = $_POST['kelas'];
 
+    // Insert user data into table
+    $result = mysqli_query($mysqli, "INSERT INTO pengajar(nama,alamat,nohp,kelas) VALUES('$nama','$alamat','$nohp','$kelas')");
 
-    // buat query
-//    $sql = "INSERT INTO pengajar (nama, alamat, nohp, kelas) VALUE ('$nama', '$alamat', '$nohp', '$kelas')";
-    $result = mysqli_query($koneksi, "INSERT INTO pengajar (nama, alamat, nohp, kelas) VALUE ('$nama', '$alamat', '$nohp', '$kelas')");
-
-  if($result){
-    echo "Data berhasil disimpan!";
-  } else {
-    echo "Data gagal disimpan";
-  }
+    if ($result) {
+    echo "User added successfully. <a href='halaman-pengajar.php'>Lihat halaman pengajar</a>";
+} else {
+  echo "Gagal!";
+}
 ?>

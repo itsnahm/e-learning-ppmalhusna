@@ -16,10 +16,10 @@
 <center><h1>E-Learning PPM Al Husna</h1></center>
 <ul class="nav justify-content-center">
   <li class="nav-item">
-    <a class="nav-link active" href="#">Beranda</a>
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Beranda</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Pengajar</a>
+    <a class="nav-link" href="halaman-pengajar.php">Pengajar</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#">Santri</a>
@@ -32,10 +32,6 @@
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#">Nilai</a>
-  </li>
-
-  <li class="nav-item">
-    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
   </li>
 </ul>
 

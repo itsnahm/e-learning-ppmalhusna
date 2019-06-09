@@ -1,6 +1,7 @@
 <?php
 include_once("koneksi.php");
-$tabel = "SELECT * FROM pengajar ORDER by NIP desc";
+$tabel = "SELECT * FROM pengajar ORDER by NIP asc";
+$koneksi = mysqli_connect($host, $username, $password, $database);
 $result = mysqli_query($koneksi, $tabel);
 
  ?>
@@ -21,9 +22,8 @@ $result = mysqli_query($koneksi, $tabel);
 </center>
 
 
-<a class="btn btn-primary" data-toggle="collapse" href="tambah-pengajar.php" role="button" aria-expanded="false" aria-controls="collapseExample">
-  Tambah pengajar baru
-</a>
+
+<a class="btn btn-primary" href="tambah-pengajar.php" role="button">Tambah pengajar baru</a>
 
     <br>
 <center>
@@ -55,7 +55,7 @@ $result = mysqli_query($koneksi, $tabel);
             echo "<td>".$pengajar['kelas']."</td>";
 
             echo "<td>";
-            echo "<a href='edit-pengajar.php?id=".$pengajar['NIP']."'>Ubah</a> | ";
+            echo "<a href='proses-edit-pengajar.php?id=".$pengajar['NIP']."'>Ubah</a> | ";
             echo "<a href='hapus-pengajar.php?id=".$pengajar['NIP']."'>Hapus</a>";
             echo "</td>";
 
